@@ -1,5 +1,6 @@
 '''
-Array problem
+Leetcode problem: https://leetcode.com/problems/two-sum/
+Data structure: Array problem
 Complexity: O(n)
 Solution: Using hash table
 '''
