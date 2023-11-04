@@ -1,6 +1,7 @@
 '''
 Leetcode: https://leetcode.com/problems/longest-repeating-character-replacement
 Solution: Sliding window
+Difficulty: Medium
 '''
 
 class Solution:
