@@ -1,6 +1,6 @@
 '''
 Leetcode problem: https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero
-Time complexity: O(n) 
+Time complexity: O(n) ; O(n/2) = O(n)
 '''
 class Solution:
     def sumZero(self, n: int) -> List[int]:
