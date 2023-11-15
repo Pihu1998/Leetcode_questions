@@ -1,0 +1,35 @@
+'''
+Leetcode question: https://leetcode.com/problems/reverse-nodes-in-k-group
+Difficulty: Hard
+Time complexity: O(n)
+'''
+
+class Solution:
+    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        if not head or k == 1:
+            return head
+
+        # Check if there are at least k nodes remaining in the list
+        count = 0
+        current = head
+        while current and count < k:
+            current = current.next
+            count += 1
+
+        if count < k:
+            return head  # Not enough nodes to reverse
+
+        # Reverse the first k nodes in the current group
+        prev = None
+        next_node = None
+        current = head
+        for i in range(k):
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+
+        # Recursively reverse the remaining part of the list
+        head.next = self.reverseKGroup(current, k)
+
+        return prev  # 'prev' is now the new head of this group
